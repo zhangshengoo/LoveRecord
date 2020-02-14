@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Love between Us</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body>
+    <audio src="./music.mp3" autoplay="true" loop="loop"></audio>
+    <div id="back">
+        <div class="mask"></div>
+        <!-- 设置展示的图片，github pages不能有后台程序只能一条一条手动添加了 囧 -->
+        <div id="carousel"  class="carousel slide carousel-fade carousel-position">
+            <div class="carousel-inner" style="width: 100%;height: 100%;" id="background">
+                <div class="item active" style="width: 100%;height: 100%;">
+                    <div style="width: 100%;height: 100%;background:url(./our_img/1.JPG);background-size: cover;"></div>
+                </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/2.JPG) ;background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/3.png) ;background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/4.JPG) ;background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/5.JPG);background-size: cover;"></div>
+                </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/6.jpg);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/7.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/8.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/9.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/10.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/11.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/12.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/13.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/14.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/15.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/16.JPG);background-size: cover;"></div>
+            </div>
+            <div class="item" style="width: 100%;height: 100%;">
+                <div style="width: 100%;height: 100%;background-image: url(./our_img/17.JPG);background-size: cover;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal show" style="top:24%;">
+        <div class="modal-dialog" style="opacity: .9">
+            <div class="modal-content" style="opacity:.85">
+                <div class="modal-header">
+                    <h1 class="text-center" style="color: #A94442;font-family: 'JournalRegular', Arial, sans-serif;font-size: 7rem;">The Times We Together</h1>
+                    <p class="text-center small-title">Zhangzhang & Yuner</p>
+                    <p class="text-center small-title">LOVING ON THE WAY</p>
+                </div>
+                <div class="modal-body text-center" style="line-height: 1.5rem;font-family: 'JournalRegular', Arial, sans-serif;font-size: 3rem;">
+                    <p>
+                        <span id="day" class="time-font"></span><span style="color:#A94442">/&nbsp;</span><span id="hour" class="time-font"></span><span style="color:#A94442">/&nbsp;</span><span id="minute" class="time-font"></span><span style="color:#A94442">/&nbsp;</span><span id="second" class="time-font"></span>
+                    </p>
+                    <p class="text-center" style="color: #808080;">
+                        days/hours/min/sec
+                    </p>
+                    <p class="text-center" style="color:#A94442;font-size: 17px" id="say"></p>
+                    <p class="text-center" style="color:#A94442;font-size: 17px" id="say_1"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/count-time.js"></script>
+    <script>
+    $(function() {
+        //设置起始日期
+        countTime('2019/10/12 20:00', 'day', 'hour', 'minute', 'second');
+        var days = $('#day').text();
+        // 设置标题
+        if (parseInt(days / 365) != 0) {
+            $(document).attr("title", "我们在一起的" + parseInt(days / 365) + "年。");
+        } else if (parseInt(days / 30) != 0) {
+            $(document).attr("title", "我们在一起的" + parseInt(days / 30) + "个月");
+        } else
+            $(document).attr("title", "我们在一起的" + days + "天");
+    
+        //设置每一张图片对应的文字
+        var says = new Array(
+        	"武汉，江滩",
+            "武汉，宜家",
+            "心里",
+            "武大，青楼",
+            "武大，青楼",
+            "武大，工图",
+            "武大",
+            "武大",
+            "武汉，东湖环道",
+           "重庆",
+            "重庆，鹅岭贰厂",
+            "重庆",
+            "重庆",
+            "重庆，马房湾66号",
+            "重庆，李子坝站",
+            "重庆，纯阳老酒馆",
+            "阜新-玉山"
+        );
+        var says_1 = new Array(
+        	"看着你的侧脸心动，请原谅张张冲动地牵上了你的手呀",
+            "开心，张张和韵儿有了第一样情侣物品，经常盯着它发呆傻笑",
+            "好喜欢我们的情侣头像，爱温柔的韵儿呀",
+            "张张在偷偷嫉妒韵儿的室友。你说，张张是醋坛子吗",
+            "自从有了韵儿，张张变得更容易走神了呢",
+            "你的单词书咋还没翻页？你英语行不行呀~",
+            "圣诞快乐呀，韵儿！希望花儿能替我在韵儿的寝室查岗",
+            "谢谢韵儿的圣诞礼物！是你给与了我无穷无尽的开心呀",
+            "元旦快乐呀！2020往后，我的人生都会刻有你",
+           "最珍贵的明信片：Zz, 一直是韵韵的全世界嗷~",
+            "张张&韵儿 2020.1.12 我们在一起三个月啦！",
+            "韵儿，我想，把我的全世界都属于你",
+            "十指相并，张张和韵儿一起去更多的地方呀~",
+            "从没想到我也有吃辣过水的时候，第一次在韵儿面前逞能失败嘿嘿",
+            "轻轨轻轨，你别来，小心我的韵儿一口吃掉你",
+            "爱着，和你一起并肩而坐吃饭的日子",
+            "所以暂时将你眼睛闭了起来~ 等武汉乌云散去，韵儿，我想好好抱紧你，亲吻你"
+        );
+
+
+        var start = function() {
+            var index = 0;
+            var rate = 6000;
+            $('#say').text(says[(index++) % says.length]);
+         	var _play = function () {
+         		$('#say').hide();
+                $('#say').text(says[(index++) % says.length]);
+                $('#say').fadeToggle();
+                $('#carousel').carousel('next');
+         	};
+            setInterval(_play, rate);
+        }();
+        
+        var start = function() {
+            var index = 0;
+            var rate = 6000;
+            $('#say_1').text(says_1[(index++) % says_1.length]);
+         	var _play = function () {
+         		$('#say_1').hide();
+                $('#say_1').text(says_1[(index++) % says_1.length]);
+                $('#say_1').fadeToggle();
+                $('#carousel').carousel('next');
+         	};
+            setInterval(_play, rate);
+        }();	
+    	
+    });
+    </script>
+</body>
+
+</html>
